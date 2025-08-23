@@ -1,5 +1,4 @@
-from fasta_utils import is_valid, stats
-
+from fasta_utils import entropy, is_valid, stats
 
 sequence_parts = []
 with open('./ms2.fasta') as fa:
@@ -13,3 +12,6 @@ if not is_valid.is_valid_sequence(sequence) :
 
 gc_content = stats.gc_content(sequence)
 print(gc_content)
+
+entropy = round(entropy.entropy(sequence), 3)
+print(entropy)
