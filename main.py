@@ -1,4 +1,5 @@
-from fasta_utils import entropy, is_valid, stats
+from fasta_utils import (entropy, is_valid, reverse_complement, search_orf,
+                         stats)
 
 sequence_parts = []
 with open('./ms2.fasta') as fa:
@@ -15,3 +16,8 @@ print(gc_content)
 
 entropy = round(entropy.entropy(sequence), 3)
 print(entropy)
+
+orfs = search_orf.search_for_orf(sequence)
+print(orfs)
+
+print(reverse_complement.rev_complement_dna(sequence))
